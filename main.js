@@ -1,8 +1,39 @@
-function setup(){
-    canvas = createCanvas(300,300);
-    canvas.center();
+Webcam.set({
+    height:350,
+    width:400,
+    image_format:'png',
+    png_quality:90
+});
+
+camera = document.getElementById("camera");
+Webcam.attach('#camera');
+
+function take_snapshot(){
+    Webcam.snap(function(data_uri){
+        document.getElementById("result").innerHTML = '<img id = "captured_image" src = "'+data_uri+'"/>';
+
+    })
+       
 }
 
-function draw(){
+console.log("ml5 version:", ml5.version);
 
-}
+classifier = ml5.imageClassifier('');
+
+
+function modelLoaded(){
+    console.log('Model Is Loaded!!!!')}
+
+    function take_snapshot(){
+        Webcam.snap(function(data_uri){
+            document.getElementById("result").innerHTML = '<img id = "captured_image" src = "'+data_uri+'"/>';
+    
+        })
+           
+    }
+    
+    function check(){
+        img = document.getElementById("captured_image");
+        classifier.classify(img, gotResult);
+    }
+    

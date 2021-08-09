@@ -1,59 +1,63 @@
-<html>
 
-<head>
-  <title>Realtime Image Identification</title>
+<html>
+  <head>
+    <title>Hand Gesture Guess App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
-  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap" rel="stylesheet">
-</head>
+  <body>
+  <div class="container">
+  
+    <center>
+ <h3 class = "btn btn-warning heading">Hand Gesture Guess App
+   <br>
+   <span>&#128076;</span>
+   <span>&#128077;</span>
+   <span>&#9996;</span>
+ </h3>
+      <br><br>
 
-<body background = "background.jpg">
+      <div id = "hand">
+        &#128076;
+        <br><br>
+        &#128077;
+        <br><br>
+        &#9996;
+        <br><br>
+      </div>
 
-  <center>
-<h3 class = "btn btn-info heading">Realtime Image Identification
-  <hr>
-  <center>
-    <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-12 heading_div">
-      Model is trained
-      <br>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+	      <label> Webcam- </label>
+<div id = "camera"></div>
+        <br><br>
+<button onclick="take_snapshot()" class = "btn btn-primary">Take Photo</button>
 
-    <div class = "btn btn-warning heading_div2">
-      Phone | Teddy | Watch | Stepler
-    </div>
+      </div>
 
-    </div>
-  </center>
-</h3>
+     <div class="col-md-4 col-sm-12 col-xs-12 snap">
+	      <label>Snapshot - </label>
+<div id = "result"></div>
+        <br><br>
+<button onclick = "check()" class = "btn btn-success">Guess the guesture</button>
+      </div>
 
-<br><br>
+    </center>
 
-<p class = "btn btn-warning result_para_tag">Object : 
-  <span id = "result_object_name"></span>
-</p>
-<br><br>
-
-<p class = "btn btn-warning result_para_tag">Accuracy : 
-  <span id = "result_object_accuracy"></span>
-</p>
-  </center>
-
-  <div class = "coppy_right_footer">
-    <marquee>Developed By - Kshitij Singh</marquee>
   </div>
 
-<script src="main.js"></script>
-</body>
 
+
+<script src="main.js"></script>
+
+  </body>
 </html>
 
-
+ 
